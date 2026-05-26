@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Privacy Policy — Agent Monitor</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 20px; color: #1f2937; line-height: 1.6; }
+h1 { font-size: 28px; }
+h2 { font-size: 20px; margin-top: 32px; }
+em { color: #6b7280; }
+code { background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.92em; }
+a { color: #2563eb; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy — Agent Monitor</h1>
+<p><em>Last updated: May 26, 2026</em></p>
+
+<p>This privacy policy describes how the <strong>Agent Monitor</strong> Chrome extension ("the Extension") handles data. The Extension is an internal team tool and is published as an <strong>Unlisted</strong> item on the Chrome Web Store.</p>
+
+<h2>Who this policy applies to</h2>
+<p>This policy applies to anyone who installs and uses the Agent Monitor Chrome extension.</p>
+
+<h2>What data the Extension reads</h2>
+<p>When you have the company monitoring portal (<code>https://webapps.otto-complus.de/*</code>) open in a browser tab, the Extension reads the agents-overview table from the rendered page. This includes:</p>
+<ul>
+<li>Agent usernames</li>
+<li>Agent display names</li>
+<li>Agent state (Available, Pause, Busy, etc.)</li>
+<li>Time in current state</li>
+<li>Campaign name</li>
+<li>Group and supervisor (from a separate reference list)</li>
+</ul>
+<p>The Extension also fetches a CSV reference list (agent code, display name, group, supervisor) from a private GitHub repository when you provide a GitHub access token via the Extension's options page.</p>
+
+<h2>Where the data is stored</h2>
+<p><strong>All data is stored locally on your device</strong> using the browser's built-in <code>chrome.storage.local</code> API. Specifically:</p>
+<ul>
+<li>Most recent scan results</li>
+<li>Up to 72 hours of agent availability history</li>
+<li>Your GitHub access token (entered by you in the options page)</li>
+<li>Your preferences (refresh interval, theme)</li>
+</ul>
+<p><strong>No data is transmitted to any server controlled by the Extension developer.</strong> The Extension does not include any analytics, telemetry, or third-party tracking.</p>
+
+<h2>What data is sent off-device</h2>
+<p>The Extension makes outbound network requests only to the following two destinations, and only for the stated purposes:</p>
+<ol>
+<li><code>https://webapps.otto-complus.de/*</code> — The monitoring portal. The Extension reads the rendered page in a tab you have open; it does not perform any login or background requests beyond what your active session is already doing.</li>
+<li><code>https://api.github.com/repos/AdminDeni/Agent-Data/contents/agents.csv</code> — GitHub API endpoint to download the agent reference list. Your GitHub access token is sent to GitHub in the Authorization header of this request.</li>
+</ol>
+<p>The Extension does not send data to any other domain.</p>
+
+<h2>Use of the GitHub access token</h2>
+<p>The token you enter in the Extension's options page is:</p>
+<ul>
+<li>Stored only in <code>chrome.storage.local</code> on your device</li>
+<li>Used solely to authenticate the request to fetch <code>agents.csv</code> from the private GitHub repository</li>
+<li>Never transmitted to any party other than GitHub</li>
+<li>Never bundled into the Extension's source code</li>
+</ul>
+<p>You can clear the token at any time from the options page.</p>
+
+<h2>Third-party services</h2>
+<p>The Extension communicates with two third parties:</p>
+<ul>
+<li><strong>The company monitoring portal</strong> (operated by your employer / Otto-Complus). Your interaction with the portal is governed by the portal's own terms and privacy policies.</li>
+<li><strong>GitHub, Inc.</strong> Requests made by the Extension to the GitHub API are governed by <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</li>
+</ul>
+
+<h2>Data we do not collect</h2>
+<p>The Extension does <strong>not</strong> collect, store, or transmit:</p>
+<ul>
+<li>Your browsing history</li>
+<li>Your location</li>
+<li>Your keystrokes, clicks, or mouse movements</li>
+<li>Health information</li>
+<li>Financial or payment information</li>
+<li>Personal communications</li>
+</ul>
+
+<h2>Data retention and deletion</h2>
+<ul>
+<li>Scan history is kept locally for <strong>72 hours</strong> and then automatically pruned.</li>
+<li>All other locally stored data persists until you clear it from the options page or uninstall the Extension.</li>
+<li><strong>Uninstalling the Extension removes all locally stored data</strong>, including your access token, scan history, and preferences.</li>
+</ul>
+
+<h2>Children's privacy</h2>
+<p>The Extension is intended for internal business use by adult employees only. It is not directed at children under 13.</p>
+
+<h2>Changes to this policy</h2>
+<p>If this policy changes, the updated version will be published at the same URL. The "Last updated" date at the top will be revised.</p>
+
+<h2>Contact</h2>
+<p>For questions about this privacy policy or the Extension, contact the team administrator who provided you with the access token.</p>
+
+</body>
+</html>
